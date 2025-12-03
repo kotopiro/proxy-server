@@ -12,7 +12,6 @@ app.get('/proxy', async (req, res) => {
       headers: { 'User-Agent': 'Mozilla/5.0' },
     });
 
-    // ヘッダ改変
     res.set('X-Frame-Options', 'ALLOWALL');
     res.set('Content-Security-Policy', "default-src * 'unsafe-inline' 'unsafe-eval'");
     res.set('Content-Type', response.headers['content-type'] || 'text/html');
